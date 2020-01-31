@@ -1,0 +1,50 @@
+USE [SONGS]
+GO
+
+--DOES NOT DELETE EXISTING TABLES
+--MAY ONLY BE USED ON CLEAN DATABASE
+
+CREATE TABLE dbo.SONGSAMR_Unitizations
+(
+    SONGSAMRID BIGINT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	SCEAssetID CHAR(9) NOT NULL,
+	SCELocation CHAR(4),
+	SCEPropertyAccount CHAR(7),
+	SCERetirementUnit CHAR(3),
+	FERCAccount CHAR(3),
+	SCEActivityCode CHAR(4),
+	SCEGLJECode VARCHAR(20),
+	SCEAction VARCHAR(20),
+	SCE_ENGZD_ENGR DATE,
+	SCE_ENGZD_ACCT DATE,
+	SCE_PostingMonth DATE,
+	SCEMasterOrder VARCHAR(9),
+	SCE_AFUDC_Debt MONEY,
+	SCE_AFUDC_Equity MONEY,
+	SCE_CIAC MONEY,
+	SCE_Directs MONEY,
+	SCE_Basis MONEY,
+	SCE_Total MONEY,
+	SCE_SecondFinancialCost MONEY,
+	SCE_ActivityQuantity INT,
+);
+
+CREATE TABLE dbo.idxSCE_SAP_AMR_PropertyGroups
+(
+	SCEPropertyAccount CHAR(7) PRIMARY KEY NOT NULL,
+	SCEPropertyGroup VARCHAR(50),
+);
+
+CREATE TABLE dbo.idxSCE_SAP_AMR_RetirementUnits
+(
+	SCERetirementUnit CHAR(3) PRIMARY KEY NOT NULL,
+	SCERetirementUnitName VARCHAR(50),
+);
+
+CREATE TABLE dbo.idxSCE_SAP_AMR_ActivityCodes
+(
+	SCEActivityCode CHAR(4) PRIMARY KEY NOT NULL,
+	SCEActivityCodeName VARCHAR(50),
+);
+
+GO

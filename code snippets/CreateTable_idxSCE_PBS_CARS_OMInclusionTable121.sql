@@ -1,0 +1,19 @@
+USE [SONGS]
+GO
+
+DROP TABLE dbo.idxSCE_PBS_CARS_OMInclusionTable121;
+
+CREATE TABLE dbo.idxSCE_PBS_CARS_OMInclusionTable121
+	(
+	SCEGeneratorID INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	FERCAccount CHAR(3) NOT NULL,
+	Location_From CHAR(4) NOT NULL,
+	Location_To CHAR(4) NOT NULL,
+	Function_From CHAR(4) NOT NULL,
+	Function_To CHAR(4) NOT NULL,
+);
+
+GO
+
+
+GO

@@ -1,0 +1,56 @@
+USE [SONGS]
+GO
+
+CREATE TABLE dbo.idxSCE_DataSource
+	(
+	DataSourceID TINYINT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	DataSource VARCHAR(4) NOT NULL,
+)
+
+GO
+
+CREATE TABLE dbo.SONGSGL
+	(
+	Invoice_Key CHAR(6) NOT NULL,
+	DataSourceID TINYINT NOT NULL,
+	PlanCategoryID VARCHAR(3) NOT NULL,
+	FERCAccount CHAR(3) NULL,
+	FERCAccountSub CHAR(3) NULL,
+	SCECostCenter CHAR(7) NULL,
+	SCECostElement CHAR(7) NULL,
+	CARSSourceDesignator VARCHAR(6) NULL,
+	CARSSourceCode CHAR(3) NULL,
+	SCELocation CHAR(4) NULL,
+	SCEFunction CHAR(4) NULL,
+	SCEPostingDate DATETIME NULL,
+	SCEDocumentDate DATETIME NULL,
+	DocumentTypeID VARCHAR(2) NULL,
+	MaterialID VARCHAR(8) NULL,
+	WBSProject VARCHAR(9) NULL,
+	SCEOrderNumber VARCHAR(9) NULL,
+	SCEOrderType VARCHAR(4) NULL,
+	TransactionDescription VARCHAR(MAX) NULL,
+	SCEVendorID VARCHAR(8) NULL,
+	PONumber VARCHAR(10) NULL,
+	GLAccount VARCHAR(12) NULL,
+	CARSAccount CHAR(6) NULL,
+	EmployeeID VARCHAR(5) NULL,
+	JobTitle VARCHAR(40) NULL,
+	JobType VARCHAR(12) NULL,
+	PartnerObject VARCHAR(20) NULL,
+	PartnerActivityID VARCHAR(6) NULL,
+	PartnerActivityName VARCHAR(25) NULL,
+	PartnerCostCenter CHAR(7) NULL,
+	PartnerOrder VARCHAR(9) NULL,
+	PartnerProfitCenter CHAR(5) NULL,
+	ProfitCenter CHAR(5) NULL,
+	CARS_AOR CHAR(4) NULL,
+	CARS_AORDept CHAR(4) NULL,
+	CODocumentLineItem VARCHAR(20) PRIMARY KEY NOT NULL,
+	CARSReferenceNumber VARCHAR(6) NULL,
+	Amount MONEY NULL,
+	Quantity DECIMAL(9,3) NULL,
+	Units VARCHAR(2) NULL,
+)
+
+GO
